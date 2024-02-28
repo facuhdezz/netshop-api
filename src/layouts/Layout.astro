@@ -4,6 +4,8 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+import Nav from '../components/nav.astro';
 ---
 
 <!doctype html>
@@ -17,6 +19,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<Nav />
 		<slot />
 	</body>
 </html>
@@ -53,5 +56,39 @@ const { title } = Astro.props;
 
 	body {
 		margin: 0;
+	}
+	
+	nav {
+		background-color: #0a0000; /* 0b0d11 */
+		position: sticky;
+		height: 80px;
+	}
+
+	nav > div {
+		width: 60%;
+	}
+
+	a {
+		color: rgb(219, 201, 201); /* rgb(201, 202, 219) */
+		font-size: 1.1rem;
+		text-decoration: none;
+		transition: .2s;
+	}
+
+	nav a:hover {
+		color: rgb(143, 120, 120); /* rgb(120, 122, 143) */
+	}
+
+	.logoNav {
+		width: 60px;
+	}
+
+	img.redesNav {
+		width: 30px;
+		transition: .2s;
+	}
+
+	img.redesNav:hover {
+		opacity: 0.7;
 	}
 </style>

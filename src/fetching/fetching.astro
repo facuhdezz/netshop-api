@@ -3,7 +3,7 @@
 // const data = await res.json();
 // console.log(data);
 import products from '../../server/products.json'
-let destacados = products.filter(item => item.destacados === true).slice(0, 10);
+let destacados = products.filter(item => item.destacados === true).slice(0, 8);
 console.log(destacados);
 
 ---
@@ -20,7 +20,7 @@ console.log(destacados);
                 </a>
                 <div class="p-5 flex flex-col justify-between grow">
                     <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{product.nombre}</h5>
+                        <h5 class="mb-2 font-bold tracking-tight text-gray-900 dark:text-white">{product.nombre}</h5>
                     </a>
                     <div>
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{product.moneda} {product.precio}</p>
@@ -35,6 +35,14 @@ console.log(destacados);
             </div> 
             ))    
         }
+    </div>
+    <div class="w-full mt-5 p-5 border dark:border-gray-700 rounded-lg title flex justify-between items-center">
+        <h1 class="text-3xl font-bold dark:text-white">Todos los productos</h2>
+        <p class="destacadosURL"><span>[GET]</span>  https://netshop-api.vercel.app/api/products</p>
+    </div>
+    <div class="w-full mt-5 p-5 border dark:border-gray-700 rounded-lg title flex justify-between items-center">
+        <h1 class="text-3xl font-bold dark:text-white">Producto por ID</h2>
+        <p class="destacadosURL"><span>[GET]</span>  https://netshop-api.vercel.app/api/products/id</p>
     </div>
 </div>
 
@@ -51,7 +59,7 @@ console.log(destacados);
     .cardGrid {
         display: grid;
         grid-template-columns: repeat(
-            auto-fill,
+            auto-fit,
             minmax(250px, 1fr)
         );
         gap: 20px;
