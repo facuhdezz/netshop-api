@@ -1,11 +1,46 @@
-<div>
-    hola
-</div>
+---
+import Layout from "../layouts/Layout.astro"
+---
+<Layout title="Netshop API - Documentacion">
+    <aside>
+        <div class="asideDiv">
+            <h3>Sobre la API</h3>
+            <a><p>Información</p></a>
+            <a><p>Caso de ejemplo</p></a>
+        </div>
+    </aside>
+    <main>
+
+    </main>
+</Layout>
 
 <style>
-    div {
-        background-color: white;
-        width: 200px;
-        height: 200px;
+    h3, p, p {
+        color: white;
+    }
+
+    aside {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(2px);
+        height: 100dvh;
+        z-index: 0;
+    }
+
+    .asideDiv {
+        margin-top: 100px;
+        margin-inline: 10px;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        margin-left: 10px;
+        color: rgb(159, 159, 159);
     }
 </style>
