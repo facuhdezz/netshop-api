@@ -3,60 +3,52 @@ import Layout from '../layouts/Layout.astro';
 import Github from '../assets/github.svg';
 import Logo from '../assets/netshop-light.svg';
 import Linkedin from '../assets/linkedin.svg';
+import Fetching from '../fetching/fetching.astro';
 ---
 
 <Layout title="Netshop API">
-	<nav>
-		<div>
-			<div>
+	<nav class="flex justify-center">
+		<div class="flex items-center justify-between">
+			<div class="flex items-center gap-10">
 				<a href="/" aria-label="Enlace a Inicio"><img class="logoNav" src={Logo.src} alt="Logo de NetShop"/></a>
 				<a href="/docs" aria-label="Enlace a documentación de la API">Documentación</a>
 				<a href="https://netshopuy.vercel.app/" target="_blank" aria-label="Enlace a ecommerce NetShop">Página de ejemplo</a>
 			</div>
-			<div>
-				<a href="/linkagithub" aria-label="Enlace a repositorio en GitHub"><img class="redesNav" src={Github.src} alt="Logo de GitHub"/></a>
-				<a href="https://www.linkedin.com/in/facu-hernandez/" aria-label="Enlace a LinkedIn"><img class="redesNav" src={Linkedin.src} alt="Logo de LinkedIn"/></a>
+			<div class="flex items-center gap-5">
+				<a href="https://github.com/facuhdezz/fakestore-api" target="_blank" aria-label="Enlace a repositorio en GitHub"><img class="redesNav" src={Github.src} alt="Logo de GitHub"/></a>
+				<a href="https://www.linkedin.com/in/facu-hernandez/" target="_blank" aria-label="Enlace a LinkedIn"><img class="redesNav" src={Linkedin.src} alt="Logo de LinkedIn"/></a>
 			</div>
 		</div>
 	</nav>
 	<main>
-		<div>
-			<div>
-				<h1>NetShop API</h1>
-				<p>Api de productos computacionales.</p>
-			</div>
-			<div>
-				<img class="logoMain" src={Logo.src} alt="Logo de NetShop"/>
+		<div class="flex justify-center">
+			<div class="flex justify-between items-center">
+				<div class="text-center">
+					<h1>NetShop API</h1>
+					<p>Acceda a una variedad de productos computacionales para su tienda de Ecommerce.</p>
+					<div class="flex gap-5 mt-10 justify-center">
+						<a class="docs-btn btn" href="/docs">Documentación</a>
+						<a class="products-btn btn" href="/api/products">Ver Productos</a>
+					</div>
+				</div>
+				<div>
+					<img class="logoMain" src={Logo.src} alt="Logo de NetShop"/>
+				</div>
 			</div>
 		</div>
+		<Fetching />
 	</main>
 </Layout>
 
 <style>
 	nav {
-		background-color: #0a0606; /* 0b0d11 */
+		background-color: #0a0000; /* 0b0d11 */
 		position: sticky;
-		display: flex;
-		justify-content: center;
 		height: 80px;
 	}
 
-	nav div {
-		display: flex;
-		align-items: center;
-	}
-
 	nav > div {
-		justify-content: space-between;
 		width: 60%;
-	}
-
-	nav > div div:nth-child(1) {
-		gap: 40px;
-	}
-
-	nav > div div:nth-child(2) {
-		gap: 20px;
 	}
 
 	a {
@@ -66,7 +58,7 @@ import Linkedin from '../assets/linkedin.svg';
 		transition: .2s;
 	}
 
-	a:hover {
+	nav a:hover {
 		color: rgb(143, 120, 120); /* rgb(120, 122, 143) */
 	}
 
@@ -84,15 +76,12 @@ import Linkedin from '../assets/linkedin.svg';
 	}
 
 	main {
-		display: flex;
-		justify-content: center;
 		margin-top: 100px;
 	}
 
 	main > div {
-		display: flex;
-		justify-content: space-between;
-		width: 50%;
+		width: 960px;
+		margin: auto;
 	}
 
 	main h1 {
@@ -104,6 +93,7 @@ import Linkedin from '../assets/linkedin.svg';
 		-webkit-background-clip: text;
     	-webkit-text-fill-color: transparent;
 		font-size: 4.3rem;
+		font-weight: bold;
 		margin-bottom: 20px;
 	}
 
@@ -113,7 +103,20 @@ import Linkedin from '../assets/linkedin.svg';
 		color: rgb(206, 206, 206);
 	}
 
-	.logoMain {
-		width: 400px;
+	.btn {
+		background-color: #0a0606;
+		padding: 20px;
+		border: 1px solid gray;
+		border-radius: 30px;
+	}
+
+	.btn:hover {
+		background-color: #000000;
+	}
+
+	@media (max-width: 1200px) {
+		main > div {
+			width: 80vw;
+		}
 	}
 </style>
