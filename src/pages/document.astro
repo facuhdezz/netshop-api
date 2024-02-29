@@ -4,23 +4,71 @@ import Layout from "../layouts/Layout.astro"
 <Layout title="Netshop API - Documentacion">
     <aside>
         <div class="asideDiv">
-            <h3>Sobre la API</h3>
-            <a><p>Información</p></a>
-            <a><p>Caso de ejemplo</p></a>
+            <div>
+                <h3>Sobre la API</h3>
+                <a href="#"><p>Introducción</p></a>
+                <a href="#"><p>Caso de ejemplo</p></a>
+            </div>
+            <div>
+                <h3>Peticiones</h3>
+                <a href="#"><p>Todos los productos</p></a>
+                <a href="#"><p>Filtrado por categorías</p></a>
+                <a href="#"><p>Producto por ID</p></a>
+                <a href="#"><p>Productos destacados</p></a>
+                <a href="#"><p>Categorías disponibles</p></a>
+            </div>
         </div>
     </aside>
     <main>
-
+        <div>
+            <h1>Introducción</h1>
+            <p>
+                Netshop API es un proyecto personal para que cualquier dev que necesite acceder a fichas de productos tecnológicos
+                lo pueda hacer de forma fácil.
+            </p>
+            <p>
+                Está pensado para el desarrollo de tiendas de ecommerce de tecnología pero es abierto a cualquier tipo de contenido que desees desarrollar.
+            </p>
+            <p>
+                Cuenta con una lista de más de 30 productos en formato json con imágenes incluídas que van desde componentes de PC, a laptops y gabinetes.
+            </p>
+        </div>
+        <div>
+            <h1>Caso de ejemplo</h1>
+            <p>
+                Netshop API es un proyecto personal para que cualquier dev que necesite acceder a fichas de productos tecnológicos
+                lo pueda hacer de forma fácil.
+            </p>
+            <p>
+                Está pensado para el desarrollo de tiendas de ecommerce de tecnología pero es abierto a cualquier tipo de contenido que desees desarrollar.
+            </p>
+            <p>
+                Cuenta con una lista de más de 30 productos en formato json con imágenes incluídas que van desde componentes de PC, a laptops y gabinetes.
+            </p>
+        </div>
+        <div>
+            <h1>Caso de ejemplo</h1>
+            <p>
+                Netshop API es un proyecto personal para que cualquier dev que necesite acceder a fichas de productos tecnológicos
+                lo pueda hacer de forma fácil.
+            </p>
+            <p>
+                Está pensado para el desarrollo de tiendas de ecommerce de tecnología pero es abierto a cualquier tipo de contenido que desees desarrollar.
+            </p>
+            <p>
+                Cuenta con una lista de más de 30 productos en formato json con imágenes incluídas que van desde componentes de PC, a laptops y gabinetes.
+            </p>
+        </div>
     </main>
 </Layout>
 
 <style>
-    h3, p, p {
+    h1, h3, p, p {
         color: white;
     }
 
     aside {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 300px;
@@ -31,8 +79,15 @@ import Layout from "../layouts/Layout.astro"
     }
 
     .asideDiv {
-        margin-top: 100px;
-        margin-inline: 10px;
+        margin-top: 170px;
+        margin-inline: 30px;
+    }
+
+    .asideDiv div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 40px;
     }
 
     h3 {
@@ -42,5 +97,30 @@ import Layout from "../layouts/Layout.astro"
     p {
         margin-left: 10px;
         color: rgb(159, 159, 159);
+    }
+
+    a p:hover {
+        color: rgb(255, 196, 196);
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 70px;
+        margin-left: 500px;
+        margin-top: 70px;
+    }
+
+    main div {
+        width: 80%;
+    }
+
+    main h1 {
+        font-size: 4rem;
+    }
+
+    main p {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
     }
 </style>
