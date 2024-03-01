@@ -7,8 +7,8 @@ import Linkedin from '../assets/linkedin.svg';
     <div class="flex items-center justify-between">
         <div class="flex items-center gap-10">
             <a href="/" aria-label="Enlace a Inicio"><img class="logoNav" src={Logo.src} alt="Logo de NetShop"/></a>
-            <a href="/document" aria-label="Enlace a documentación de la API">Documentación</a>
-            <a href="https://netshopuy.vercel.app/" target="_blank" aria-label="Enlace a ecommerce NetShop">Página de ejemplo</a>
+            <a class="links" href="/document" aria-label="Enlace a documentación de la API">Documentación</a>
+            <a class="links" href="https://netshopuy.vercel.app/" target="_blank" aria-label="Enlace a ecommerce NetShop">Página de ejemplo</a>
         </div>
         <div class="flex items-center gap-5">
             <a href="https://github.com/facuhdezz/fakestore-api" target="_blank" aria-label="Enlace a repositorio en GitHub"><img class="redesNav" src={Github.src} alt="Logo de GitHub"/></a>
@@ -47,5 +47,11 @@ import Linkedin from '../assets/linkedin.svg';
 
 	img.redesNav:hover {
 		opacity: 0.7;
+	}
+
+	@media (max-width: 850px) {
+		.links {
+			display: none;
+		}
 	}
     </style>

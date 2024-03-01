@@ -2,7 +2,8 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+
 
 app.use(express.json());
 const products = require('./products.json');
@@ -33,7 +34,7 @@ app.get("/api", (req, res) => {
 
 /* OBTENER TODOS LOS PRODUCTOS O FILTRADOS POR CATEGORÍAS */
 
-app.get("/api/productos", (req, res) => { //  /productos?categoria={nombre_categoria}
+app.get("/api/products", (req, res) => { //  /productos?categoria={nombre_categoria}
     const category = req.query.category;
 
     if(category) {
@@ -47,7 +48,7 @@ app.get("/api/productos", (req, res) => { //  /productos?categoria={nombre_categ
 
 /* OBTENER UN PRODUCTO POR SU ID */
 
-app.get("/api/productos/:id", (req, res) => { //  /productos/{id}
+app.get("/api/products/:id", (req, res) => { //  /productos/{id}
     const productId = req.params.id;
     const product = products.filter((item) => item.id == productId);
     res.send(product);
@@ -55,14 +56,14 @@ app.get("/api/productos/:id", (req, res) => { //  /productos/{id}
 
 /* OBTENER PRODUCTOS DESTACADOS */
 
-app.get("/api/destacados", (req, res) => {
+app.get("/api/dest", (req, res) => {
     const destacados = products.filter((item) => {return item.destacados === true});
     res.send(destacados);
 });
 
 /* OBTENER LAS CATEGORIAS */
 
-app.get("/api/categorias", (req, res) => {
+app.get("/api/categories", (req, res) => {
     const categorias = [...new Set(products.map(item => item.category))];
     res.send(categorias);
 });

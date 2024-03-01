@@ -3,13 +3,14 @@
 // const data = await res.json();
 // console.log(data);
 import products from '../../server/products.json'
-let destacados = products.filter(item => item.destacados === true).slice(0, 8);
+let destacados = products.filter(item => item.destacados === true).slice(0, 6);
 console.log(destacados);
 ---
-<div class="info">
+<article class="info">
+    <h1 class="text-3xl font-bold dark:text-white title-hidden mb-2">Productos destacados</h2>
     <div class="w-full mb-5 p-5 border dark:border-gray-700 rounded-lg title flex justify-between items-center">
-        <h1 class="text-3xl font-bold dark:text-white">Productos destacados</h2>
-        <p class="destacadosURL"><span>[GET]</span>  https://netshop-api.vercel.app/api/destacados</p>
+        <h1 class="text-3xl font-bold dark:text-white title-block">Productos destacados</h2>
+        <p class="destacadosURL"><span>[GET]</span>  https://netshop-api.vercel.app/api/dest</p>
     </div>
     <div class="cardGrid">
         { destacados.map(product => (
@@ -35,24 +36,29 @@ console.log(destacados);
             ))    
         }
     </div>
+    <h1 class="text-3xl font-bold dark:text-white title-hidden">Todos los productos</h2>
     <div class="w-full mt-5 p-5 border dark:border-gray-700 rounded-lg title flex justify-between items-center">
-        <h1 class="text-3xl font-bold dark:text-white">Todos los productos</h2>
-        <p class="destacadosURL"><span>[GET]</span>  https://netshop-api.vercel.app/api/productos</p>
+        <h1 class="text-3xl font-bold dark:text-white title-block">Todos los productos</h2>
+        <p class="destacadosURL"><span>[GET]</span>  https://netshop-api.vercel.app/api/products</p>
     </div>
+    <h1 class="text-3xl font-bold dark:text-white title-hidden">Producto por ID</h2>
     <div class="w-full mt-5 p-5 border dark:border-gray-700 rounded-lg title flex justify-between items-center">
-        <h1 class="text-3xl font-bold dark:text-white">Producto por ID</h2>
-        <p class="destacadosURL"><span>[GET]</span>  https://netshop-api.vercel.app/api/productos/id</p>
+        <h1 class="text-3xl font-bold dark:text-white title-block">Producto por ID</h2>
+        <p class="destacadosURL"><span>[GET]</span>  https://netshop-api.vercel.app/api/products/id</p>
     </div>
-</div>
+</article>
 
 <style>
     .info {
-        margin-inline: 200px;
         margin-block: 100px;
     }
 
-    .info > .title {
+    .info .title {
         background-color: rgb(24, 23, 23);
+    }
+
+    .title-hidden {
+        display: none;
     }
 
     .cardGrid {
@@ -74,4 +80,30 @@ console.log(destacados);
         color: white;
         font-weight: bold;
     }
+
+    @media (max-width: 950px) {
+        .title-hidden {
+            display: block;
+            margin-top: 20px;
+        }
+
+        .title-block {
+            display: none;
+        }
+
+        .cardGrid {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 550px) {
+		.destacadosURL {
+			font-size: 1rem;
+		}
+	}
 </style>

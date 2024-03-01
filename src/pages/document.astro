@@ -52,11 +52,11 @@ const catNameJson = JSON.stringify(cat, null, 2);
                     <img class="rounded-lg border dark:border-gray-500" src={img4.src} alt="Netshop ecommerce carrito de compras"/>
                 </div>
             </article>
-            <Peticiones id="all" title="Todos los productos" json={allJson} url="https://netshop-api.vercel.app/api/productos" />
-            <Peticiones id="category" title="Filtrado por categoría" json={catJson} url="https://netshop-api.vercel.app/api/productos?categoria=procesadores"/>
-            <Peticiones id="idProduct" title="Producto por ID" json={oneJson} url="https://netshop-api.vercel.app/api/productos/4006"/>
-            <Peticiones id="destacados" title="Productos destacados" json={destJson} url="https://netshop-api.vercel.app/api/destacados"/>
-            <Peticiones id="categories" title="Categorías disponibles" json={catNameJson} url="https://netshop-api.vercel.app/api/categorias"/>       
+            <Peticiones id="all" title="Todos los productos" json={allJson} url="https://netshop-api.vercel.app/api/products" />
+            <Peticiones id="category" title="Filtrado por categoría" json={catJson} url="https://netshop-api.vercel.app/api/productos?category=procesadores"/>
+            <Peticiones id="idProduct" title="Producto por ID" json={oneJson} url="https://netshop-api.vercel.app/api/products/4006"/>
+            <Peticiones id="destacados" title="Productos destacados" json={destJson} url="https://netshop-api.vercel.app/api/dest"/>
+            <Peticiones id="categories" title="Categorías disponibles" json={catNameJson} url="https://netshop-api.vercel.app/api/categories"/>       
         </main>
     </div>
 </Layout>

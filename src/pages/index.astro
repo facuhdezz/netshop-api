@@ -6,21 +6,19 @@ import Logo from '../assets/netshop-light.svg';
 
 <Layout title="Netshop API">
 	<main>
-		<div class="flex justify-center">
+		<article class="flex justify-center">
 			<div class="flex justify-between items-center">
 				<div class="text-center">
 					<h1>NetShop API</h1>
 					<p>Acceda a una variedad de productos computacionales para su tienda de Ecommerce.</p>
-					<div class="flex gap-5 mt-10 justify-center">
-						<a class="docs-btn btn" href="/document">Documentación</a>
-						<a class="products-btn btn" href="/api/productos" target="_blank">Ver Productos</a>
+					<div class="flex gap-5 mt-10 justify-center btn-div">
+						<a class="btn" href="/document">Documentación</a>
+						<a class="btn" href="/api/products" target="_blank">Ver Productos</a>
 					</div>
 				</div>
-				<div>
-					<img class="logoMain" src={Logo.src} alt="Logo de NetShop"/>
-				</div>
+				<img class="logoMain" src={Logo.src} alt="Logo de NetShop"/>
 			</div>
-		</div>
+		</article>
 		<Fetching />
 	</main>
 </Layout>
@@ -28,12 +26,11 @@ import Logo from '../assets/netshop-light.svg';
 <style>
 
 	main {
-		margin-top: 180px;
+		margin-top: 200px;
 	}
 
-	main > div {
-		width: 960px;
-		margin: auto;
+	main :global(article) {
+		margin-inline: 400px;
 	}
 
 	h1 {
@@ -46,6 +43,7 @@ import Logo from '../assets/netshop-light.svg';
     	-webkit-text-fill-color: transparent;
 		font-size: 4.3rem;
 		font-weight: bold;
+		line-height: 5rem;
 		margin-bottom: 20px;
 	}
 
@@ -66,9 +64,49 @@ import Logo from '../assets/netshop-light.svg';
 		background-color: #c66969;
 	}
 
-	@media (max-width: 1200px) {
-		main > div {
-			width: 80vw;
+	.logoMain {
+		width: 400px;
+	}
+
+	@media (max-width: 1650px) {
+		main :global(article) {
+			margin-inline: 200px;
+		}
+	}
+
+	@media (max-width: 1250px) {
+		.logoMain {
+			width: 300px;
+		}
+
+		p {
+			font-size: 1.2rem;
+		}
+	}
+
+	@media (max-width: 1150px) {
+		.logoMain {
+			display: none;
+		}
+	}
+
+	@media (max-width: 750px) {
+		main {
+			margin-top: 100px;
+		}
+
+		main :global(article) {
+			margin-inline: 100px;
+		}
+	}
+
+	@media (max-width: 550px) {
+		main :global(article) {
+			margin-inline: 50px;
+		}
+
+		.btn-div {
+			flex-direction: column;
 		}
 	}
 </style>
