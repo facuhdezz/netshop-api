@@ -9,6 +9,14 @@
       {
         "src": "/(.*)",
         "dest": "/"
+      },
+      {
+        "src": "/api/(.*)",
+        "dest": "/api"
+      },
+      {
+        "src": "/document/(.*)",
+        "dest": "/document"
       }
     ]
   }
