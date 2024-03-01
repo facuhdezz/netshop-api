@@ -2,7 +2,7 @@
 // const res = await fetch('http://localhost:3000/api/destacados')
 // const data = await res.json();
 // console.log(data);
-import products from '../../server/products.json'
+import products from '../../api/products.json'
 let destacados = products.filter(item => item.destacados === true).slice(0, 6);
 console.log(destacados);
 ---
