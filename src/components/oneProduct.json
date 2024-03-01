@@ -1,0 +1,18 @@
+[
+    {
+        "id": 4006,
+        "category": "monitores",
+        "destacados": true,
+        "caracteristicas": [
+            "Tamaño: 34 pulgadas",
+            "Resolución: 2560 x 1440",
+            "Tiempo de respuesta: 1ms"
+        ],
+        "nombre": "Monitor Gamer Curvo MSI Optix G32CQ4 | WQHD, 31.5”",
+        "img": "https://firebasestorage.googleapis.com/v0/b/netshop...",
+        "moneda": "USD",
+        "precio": 785,
+        "stock": "2",
+        "marca": "Msi"
+    }
+]

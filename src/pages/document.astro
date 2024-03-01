@@ -1,27 +1,40 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
+import img1 from "../assets/img/1.webp";
+import img2 from "../assets/img/2.webp";
+import img3 from "../assets/img/3.webp";
+import img4 from "../assets/img/4.webp";
+import allProducts from "../components/allProducts.json";
+import categories from "../components/categories.json";
+import oneProduct from "../components/oneProduct.json";
+import destacados from "../components/destacados.json";
+
+const allJson = JSON.stringify(allProducts, null, 2)
+const catJson = JSON.stringify(categories, null, 2)
+const oneJson = JSON.stringify(oneProduct, null, 2)
+const destJson = JSON.stringify(destacados, null, 2)
 ---
 <Layout title="Netshop API - Documentacion">
     <aside>
         <div class="asideDiv">
             <div>
                 <h3>Sobre la API</h3>
-                <a href="#"><p>Introducción</p></a>
-                <a href="#"><p>Caso de ejemplo</p></a>
+                <a href="#introduccion"><p>Introducción</p></a>
+                <a href="#showcase"><p>Caso de ejemplo</p></a>
             </div>
             <div>
                 <h3>Peticiones</h3>
-                <a href="#"><p>Todos los productos</p></a>
-                <a href="#"><p>Filtrado por categorías</p></a>
-                <a href="#"><p>Producto por ID</p></a>
-                <a href="#"><p>Productos destacados</p></a>
+                <a href="#all"><p>Todos los productos</p></a>
+                <a href="#category"><p>Filtrado por categorías</p></a>
+                <a href="#idProduct"><p>Producto por ID</p></a>
+                <a href="#destacados"><p>Productos destacados</p></a>
                 <a href="#"><p>Categorías disponibles</p></a>
             </div>
         </div>
     </aside>
     <main>
         <div>
-            <h1>Introducción</h1>
+            <h1 id="introduccion">Introducción</h1>
             <p>
                 Netshop API es un proyecto personal para que cualquier dev que necesite acceder a fichas de productos tecnológicos
                 lo pueda hacer de forma fácil.
@@ -34,30 +47,58 @@ import Layout from "../layouts/Layout.astro"
             </p>
         </div>
         <div>
-            <h1>Caso de ejemplo</h1>
-            <p>
-                Netshop API es un proyecto personal para que cualquier dev que necesite acceder a fichas de productos tecnológicos
-                lo pueda hacer de forma fácil.
-            </p>
-            <p>
-                Está pensado para el desarrollo de tiendas de ecommerce de tecnología pero es abierto a cualquier tipo de contenido que desees desarrollar.
-            </p>
-            <p>
-                Cuenta con una lista de más de 30 productos en formato json con imágenes incluídas que van desde componentes de PC, a laptops y gabinetes.
-            </p>
+            <h1 id="showcase">Caso de ejemplo</h1>
+            <a href="https://netshopuy.vercel.app/" target="_blank"><h3>Netshp Uy - Ecommerce</h3></a>
+            <div class="gridShowcase border dark:border-gray-700 rounded-lg">
+                <img src={img1.src} alt=""/>
+                <img src={img2.src} alt=""/>
+                <img src={img3.src} alt=""/>
+                <img src={img4.src} alt=""/>
+            </div>
         </div>
         <div>
-            <h1>Caso de ejemplo</h1>
-            <p>
-                Netshop API es un proyecto personal para que cualquier dev que necesite acceder a fichas de productos tecnológicos
-                lo pueda hacer de forma fácil.
-            </p>
-            <p>
-                Está pensado para el desarrollo de tiendas de ecommerce de tecnología pero es abierto a cualquier tipo de contenido que desees desarrollar.
-            </p>
-            <p>
-                Cuenta con una lista de más de 30 productos en formato json con imágenes incluídas que van desde componentes de PC, a laptops y gabinetes.
-            </p>
+            <h1 id="all">Todos los productos</h1>
+            <p>Request:</p>                 
+            <div class="w-full my-5 p-5 border dark:border-gray-700 rounded-lg title">
+                <p class="destacadosURL"><span>[GET]</span>  https://netshop-api.vercel.app/api/products</p>
+            </div>
+            <p>Response:</p>                 
+            <div class="w-full mt-5 p-5 border dark:border-gray-700 rounded-lg title">
+                <pre class="destacadosURL" style="font-size: 1rem">{allJson}</pre>
+            </div>
+        </div>
+        <div>
+            <h1 id="category">Filtrado por categoría</h1>
+            <p>Request:</p>                 
+            <div class="w-full my-5 p-5 border dark:border-gray-700 rounded-lg title">
+                <p class="destacadosURL"><span>[GET]</span>  https://netshop-api.vercel.app/api/products?categoria=procesadores</p>
+            </div>
+            <p>Response:</p>                 
+            <div class="w-full mt-5 p-5 border dark:border-gray-700 rounded-lg title">
+                <pre class="destacadosURL" style="font-size: 1rem">{catJson}</pre>
+            </div>
+        </div>
+        <div>
+            <h1 id="idProduct">Producto por ID</h1>
+            <p>Request:</p>                 
+            <div class="w-full my-5 p-5 border dark:border-gray-700 rounded-lg title">
+                <p class="destacadosURL"><span>[GET]</span>  https://netshop-api.vercel.app/api/products/4006</p>
+            </div>
+            <p>Response:</p>                 
+            <div class="w-full mt-5 p-5 border dark:border-gray-700 rounded-lg title">
+                <pre class="destacadosURL" style="font-size: 1rem">{oneJson}</pre>
+            </div>
+        </div>
+        <div>
+            <h1 id="destacados">Productos destacados</h1>
+            <p>Request:</p>                 
+            <div class="w-full my-5 p-5 border dark:border-gray-700 rounded-lg title">
+                <p class="destacadosURL"><span>[GET]</span>  https://netshop-api.vercel.app/api/destacados</p>
+            </div>
+            <p>Response:</p>                 
+            <div class="w-full mt-5 p-5 border dark:border-gray-700 rounded-lg title">
+                <pre class="destacadosURL" style="font-size: 1rem">{destJson}</pre>
+            </div>
         </div>
     </main>
 </Layout>
@@ -90,7 +131,7 @@ import Layout from "../layouts/Layout.astro"
         margin-bottom: 40px;
     }
 
-    h3 {
+    aside h3 {
         font-size: 1.3rem;
     }
 
@@ -106,9 +147,9 @@ import Layout from "../layouts/Layout.astro"
     main {
         display: flex;
         flex-direction: column;
-        gap: 70px;
+        gap: 100px;
         margin-left: 500px;
-        margin-top: 70px;
+        margin-block: 50px;
     }
 
     main div {
@@ -117,10 +158,50 @@ import Layout from "../layouts/Layout.astro"
 
     main h1 {
         font-size: 4rem;
+        padding-top: 100px;
+    }
+
+    main h3 {
+        font-size: 2rem;
     }
 
     main p {
         font-size: 1.3rem;
         margin-bottom: 10px;
+    }
+
+    .gridShowcase {
+        background-color: rgb(194, 194, 194);
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(400px, 1fr)
+        );
+        gap: 10px;
+        margin-top: 50px;
+    }
+
+    .destacadosURL {
+        color: rgb(179, 179, 179);
+        font-size: 1.25rem;
+    }
+
+    .destacadosURL span {
+        margin-right: 10px;
+        color: white;
+        font-weight: bold;
+    }
+    
+    .title {
+        background-color: rgb(24, 23, 23);
+    }
+
+    .title p {
+        margin: 0;
+    }
+
+    pre {
+        font-size: 0.5rem;
     }
 </style>

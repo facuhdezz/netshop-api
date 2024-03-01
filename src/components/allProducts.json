@@ -1,0 +1,19 @@
+[
+    {
+        "id": 4002,
+        "precio": 186,
+        "caracteristicas": [
+            "Tamaño: 23.8 pulgadas de area visible",
+            "Resolución: 1920 x 1080",
+            "Tiempo de respuesta: 1ms"
+        ],
+        "category": "monitores",
+        "nombre": "Monitor Perseo 23.8” Fhd 165 Hz",
+        "moneda": "USD",
+        "stock": "7",
+        "marca": "Perseo",
+        "img": "https://firebasestorage.googleapis.com/v0/b/netshop...",
+        "destacados": false
+    },
+    "// ..."
+]

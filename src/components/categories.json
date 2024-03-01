@@ -1,0 +1,38 @@
+[
+    {
+        "id": 7002,
+        "precio": 192,
+        "caracteristicas": [
+            "Cantidad de núcleos: 6",
+            "Cantidad de subprocesos: 12",
+            "Frecuencia básica del procesador: 2,90 GHz",
+            "Frecuencia turbo máxima: 4,30 GHz",
+            "TDP: 65 W"
+        ],
+        "stock": "7",
+        "nombre": "Intel Core i5 10400",
+        "category": "procesadores",
+        "moneda": "USD",
+        "img": "https://firebasestorage.googleapis.com/v0/b/netshop...",
+        "destacados": false,
+        "fabricante": "INTEL"
+    },
+    {
+        "id": 7001,
+        "destacados": true,
+        "moneda": "USD",
+        "img": "https://firebasestorage.googleapis.com/v0/b/netshop...",
+        "caracteristicas": [
+            "Número de núcleos de CPU: 8",
+            "Número de hilos: 16",
+            "Reloj base: 3.8GHz",
+            "Reloj de aumento máx: 4.7GHz",
+            "TDP/TDP predeterminado: 105W"
+        ],
+        "stock": "3",
+        "category": "procesadores",
+        "fabricante": "AMD",
+        "precio": 379,
+        "nombre": "AMD Ryzen 7 5800x"
+    }
+]
