@@ -1,207 +1,123 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Aside from "../components/aside.astro";
+import Peticiones from "../components/peticiones.astro";
+
 import img1 from "../assets/img/1.webp";
 import img2 from "../assets/img/2.webp";
 import img3 from "../assets/img/3.webp";
 import img4 from "../assets/img/4.webp";
-import allProducts from "../components/allProducts.json";
-import categories from "../components/categories.json";
-import oneProduct from "../components/oneProduct.json";
-import destacados from "../components/destacados.json";
 
-const allJson = JSON.stringify(allProducts, null, 2)
-const catJson = JSON.stringify(categories, null, 2)
-const oneJson = JSON.stringify(oneProduct, null, 2)
-const destJson = JSON.stringify(destacados, null, 2)
+import allProducts from "../assets/jsons/allProducts.json";
+import categories from "../assets/jsons/categories.json";
+import oneProduct from "../assets/jsons/oneProduct.json";
+import destacados from "../assets/jsons/destacados.json";
+
+const allJson = JSON.stringify(allProducts, null, 2);
+const catJson = JSON.stringify(categories, null, 2);
+const oneJson = JSON.stringify(oneProduct, null, 2);
+const destJson = JSON.stringify(destacados, null, 2);
+
+const cat = ["Laptops", "Gráficas", "Procesadores", "Monitores", "Gabinetes"];
+const catNameJson = JSON.stringify(cat, null, 2);
 ---
 <Layout title="Netshop API - Documentacion">
-    <aside>
-        <div class="asideDiv">
-            <div>
-                <h3>Sobre la API</h3>
-                <a href="#introduccion"><p>Introducción</p></a>
-                <a href="#showcase"><p>Caso de ejemplo</p></a>
-            </div>
-            <div>
-                <h3>Peticiones</h3>
-                <a href="#all"><p>Todos los productos</p></a>
-                <a href="#category"><p>Filtrado por categorías</p></a>
-                <a href="#idProduct"><p>Producto por ID</p></a>
-                <a href="#destacados"><p>Productos destacados</p></a>
-                <a href="#"><p>Categorías disponibles</p></a>
-            </div>
-        </div>
-    </aside>
-    <main>
-        <div>
-            <h1 id="introduccion">Introducción</h1>
-            <p>
-                Netshop API es un proyecto personal para que cualquier dev que necesite acceder a fichas de productos tecnológicos
-                lo pueda hacer de forma fácil.
-            </p>
-            <p>
-                Está pensado para el desarrollo de tiendas de ecommerce de tecnología pero es abierto a cualquier tipo de contenido que desees desarrollar.
-            </p>
-            <p>
-                Cuenta con una lista de más de 30 productos en formato json con imágenes incluídas que van desde componentes de PC, a laptops y gabinetes.
-            </p>
-        </div>
-        <div>
-            <h1 id="showcase">Caso de ejemplo</h1>
-            <a href="https://netshopuy.vercel.app/" target="_blank"><h3>Netshp Uy - Ecommerce</h3></a>
-            <div class="gridShowcase border dark:border-gray-700 rounded-lg">
-                <img src={img1.src} alt=""/>
-                <img src={img2.src} alt=""/>
-                <img src={img3.src} alt=""/>
-                <img src={img4.src} alt=""/>
-            </div>
-        </div>
-        <div>
-            <h1 id="all">Todos los productos</h1>
-            <p>Request:</p>                 
-            <div class="w-full my-5 p-5 border dark:border-gray-700 rounded-lg title">
-                <p class="destacadosURL"><span>[GET]</span>  https://netshop-api.vercel.app/api/products</p>
-            </div>
-            <p>Response:</p>                 
-            <div class="w-full mt-5 p-5 border dark:border-gray-700 rounded-lg title">
-                <pre class="destacadosURL" style="font-size: 1rem">{allJson}</pre>
-            </div>
-        </div>
-        <div>
-            <h1 id="category">Filtrado por categoría</h1>
-            <p>Request:</p>                 
-            <div class="w-full my-5 p-5 border dark:border-gray-700 rounded-lg title">
-                <p class="destacadosURL"><span>[GET]</span>  https://netshop-api.vercel.app/api/products?categoria=procesadores</p>
-            </div>
-            <p>Response:</p>                 
-            <div class="w-full mt-5 p-5 border dark:border-gray-700 rounded-lg title">
-                <pre class="destacadosURL" style="font-size: 1rem">{catJson}</pre>
-            </div>
-        </div>
-        <div>
-            <h1 id="idProduct">Producto por ID</h1>
-            <p>Request:</p>                 
-            <div class="w-full my-5 p-5 border dark:border-gray-700 rounded-lg title">
-                <p class="destacadosURL"><span>[GET]</span>  https://netshop-api.vercel.app/api/products/4006</p>
-            </div>
-            <p>Response:</p>                 
-            <div class="w-full mt-5 p-5 border dark:border-gray-700 rounded-lg title">
-                <pre class="destacadosURL" style="font-size: 1rem">{oneJson}</pre>
-            </div>
-        </div>
-        <div>
-            <h1 id="destacados">Productos destacados</h1>
-            <p>Request:</p>                 
-            <div class="w-full my-5 p-5 border dark:border-gray-700 rounded-lg title">
-                <p class="destacadosURL"><span>[GET]</span>  https://netshop-api.vercel.app/api/destacados</p>
-            </div>
-            <p>Response:</p>                 
-            <div class="w-full mt-5 p-5 border dark:border-gray-700 rounded-lg title">
-                <pre class="destacadosURL" style="font-size: 1rem">{destJson}</pre>
-            </div>
-        </div>
-    </main>
+    <div class="cont">
+        <Aside />
+        <main>
+            <hr id="introduccion" class="border-gray-500">
+            <article>
+                <h1>Introducción</h1>
+                <div class="parrafo">
+                    <p>
+                        Netshop API es un proyecto pensado para que cualquier dev que necesite acceder a fichas de productos tecnológicos
+                        lo pueda hacer de forma fácil.
+                    </p>
+                    <p>
+                        Está orientado al desarrollo de tiendas de ecommerce de tecnología pero es abierto a cualquier tipo de contenido que desees desarrollar.
+                    </p>
+                    <p>
+                        Cuenta con una lista de más de 30 productos en formato json con imágenes incluídas que van desde componentes de PC, a laptops y gabinetes.
+                    </p>
+                </div>
+            </article>
+            <hr id="showcase" class="border-gray-500">
+            <article>
+                <h1>Caso de ejemplo</h1>
+                <a href="https://netshopuy.vercel.app/" target="_blank"><h3>Netshp Uy - Ecommerce</h3></a>
+                <div class="gridShowcase rounded-lg">
+                    <img class="rounded-lg border dark:border-gray-500" src={img1.src} alt="Netshop ecommerce página de inicio"/>
+                    <img class="rounded-lg border dark:border-gray-500" src={img2.src} alt="Netshop ecommerce categorías"/>
+                    <img class="rounded-lg border dark:border-gray-500" src={img3.src} alt="Netshop ecommerce descripción del producto"/>
+                    <img class="rounded-lg border dark:border-gray-500" src={img4.src} alt="Netshop ecommerce carrito de compras"/>
+                </div>
+            </article>
+            <Peticiones id="all" title="Todos los productos" json={allJson} url="https://netshop-api.vercel.app/api/productos" />
+            <Peticiones id="category" title="Filtrado por categoría" json={catJson} url="https://netshop-api.vercel.app/api/productos?categoria=procesadores"/>
+            <Peticiones id="idProduct" title="Producto por ID" json={oneJson} url="https://netshop-api.vercel.app/api/productos/4006"/>
+            <Peticiones id="destacados" title="Productos destacados" json={destJson} url="https://netshop-api.vercel.app/api/destacados"/>
+            <Peticiones id="categories" title="Categorías disponibles" json={catNameJson} url="https://netshop-api.vercel.app/api/categorias"/>       
+        </main>
+    </div>
 </Layout>
 
 <style>
-    h1, h3, p, p {
-        color: white;
-    }
-
-    aside {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 300px;
-        background: rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(2px);
-        height: 100dvh;
-        z-index: 0;
-    }
-
-    .asideDiv {
-        margin-top: 170px;
-        margin-inline: 30px;
-    }
-
-    .asideDiv div {
+    .cont {
         display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-bottom: 40px;
-    }
-
-    aside h3 {
-        font-size: 1.3rem;
-    }
-
-    p {
-        margin-left: 10px;
-        color: rgb(159, 159, 159);
-    }
-
-    a p:hover {
-        color: rgb(255, 196, 196);
+        gap: 200px;
     }
 
     main {
         display: flex;
         flex-direction: column;
-        gap: 100px;
-        margin-left: 500px;
-        margin-block: 50px;
+        width: 100%;
+        height: 100dvh;
+        padding-bottom: 50px;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
     }
 
-    main div {
-        width: 80%;
+    main :global(hr) {
+        width: 60%;
+        margin-bottom: 150px;
+        margin-top: 50px;
+    }
+    
+    #introduccion {
+        margin-top: 0;
     }
 
-    main h1 {
+    h1 {
         font-size: 4rem;
-        padding-top: 100px;
+        color: white;
     }
 
-    main h3 {
+    h3 {
         font-size: 2rem;
+        color: white;
     }
 
-    main p {
+    p {
         font-size: 1.3rem;
         margin-bottom: 10px;
+        margin-left: 10px;
+        color: rgb(159, 159, 159);
+    }
+
+    main :global(article) {
+        width: 60%;
     }
 
     .gridShowcase {
-        background-color: rgb(194, 194, 194);
+        background: rgba(255, 255, 255, 0.1);
         padding: 10px;
         display: grid;
         grid-template-columns: repeat(
-            auto-fit,
+            auto-fit class="",
             minmax(400px, 1fr)
         );
         gap: 10px;
         margin-top: 50px;
-    }
-
-    .destacadosURL {
-        color: rgb(179, 179, 179);
-        font-size: 1.25rem;
-    }
-
-    .destacadosURL span {
-        margin-right: 10px;
-        color: white;
-        font-weight: bold;
-    }
-    
-    .title {
-        background-color: rgb(24, 23, 23);
-    }
-
-    .title p {
-        margin: 0;
-    }
-
-    pre {
-        font-size: 0.5rem;
     }
 </style>

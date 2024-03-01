@@ -1,0 +1,57 @@
+<aside>
+    <div class="asideDiv">
+        <div>
+            <h3>Sobre la API</h3>
+            <a href="#introduccion"><p>Introducción</p></a>
+            <a href="#showcase"><p>Caso de ejemplo</p></a>
+        </div>
+        <div>
+            <h3>Peticiones</h3>
+            <a href="#all"><p>Todos los productos</p></a>
+            <a href="#category"><p>Filtrado por categorías</p></a>
+            <a href="#idProduct"><p>Producto por ID</p></a>
+            <a href="#destacados"><p>Productos destacados</p></a>
+            <a href="#categories"><p>Categorías disponibles</p></a>
+        </div>
+    </div>
+</aside>
+
+<style>
+    h1, h3, p, p {
+        color: white;
+    }
+
+    aside {
+        width: 300px;
+        flex-shrink: 0;
+        padding-top: 170px;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(2px);
+        height: 100dvh;
+        z-index: 0;
+    }
+
+    .asideDiv {
+        margin-inline: 30px;
+    }
+
+    .asideDiv div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+
+    aside h3 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        margin-left: 10px;
+        color: rgb(159, 159, 159);
+    }
+
+    a p:hover {
+        color: rgb(255, 196, 196);
+    }
+</style>

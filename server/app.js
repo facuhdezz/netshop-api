@@ -33,7 +33,7 @@ app.get("/api", (req, res) => {
 
 /* OBTENER TODOS LOS PRODUCTOS O FILTRADOS POR CATEGORÍAS */
 
-app.get("/api/products", (req, res) => { //  /productos?categoria={nombre_categoria}
+app.get("/api/productos", (req, res) => { //  /productos?categoria={nombre_categoria}
     const category = req.query.category;
 
     if(category) {
@@ -47,7 +47,7 @@ app.get("/api/products", (req, res) => { //  /productos?categoria={nombre_catego
 
 /* OBTENER UN PRODUCTO POR SU ID */
 
-app.get("/api/products/:id", (req, res) => { //  /productos/{id}
+app.get("/api/productos/:id", (req, res) => { //  /productos/{id}
     const productId = req.params.id;
     const product = products.filter((item) => item.id == productId);
     res.send(product);
