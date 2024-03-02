@@ -53,7 +53,7 @@ const catNameJson = JSON.stringify(cat, null, 2);
                 </div>
             </article>
             <Peticiones id="all" title="Todos los productos" json={allJson} url="https://netshop-api.vercel.app/api/products" />
-            <Peticiones id="category" title="Filtrado por categoría" json={catJson} url="https://netshop-api.vercel.app/api/productos?category=procesadores"/>
+            <Peticiones id="category" title="Filtrado por categoría" json={catJson} url="https://netshop-api.vercel.app/api/products?category=procesadores"/>
             <Peticiones id="idProduct" title="Producto por ID" json={oneJson} url="https://netshop-api.vercel.app/api/products/4006"/>
             <Peticiones id="destacados" title="Productos destacados" json={destJson} url="https://netshop-api.vercel.app/api/dest"/>
             <Peticiones id="categories" title="Categorías disponibles" json={catNameJson} url="https://netshop-api.vercel.app/api/categories"/>       
@@ -119,5 +119,15 @@ const catNameJson = JSON.stringify(cat, null, 2);
         );
         gap: 10px;
         margin-top: 50px;
+    }
+
+    @media (max-width: 1600px) {
+        .cont {
+            gap: 70px;
+        }
+
+        main :global(article), main :global(hr) {
+            width: 80%;
+        }
     }
 </style>
