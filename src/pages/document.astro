@@ -109,6 +109,11 @@ const catNameJson = JSON.stringify(cat, null, 2);
         width: 60%;
     }
 
+    main :global(pre) {        
+        color: rgb(179, 179, 179);
+        font-size: 1rem;
+    }
+
     .gridShowcase {
         background: rgba(255, 255, 255, 0.1);
         padding: 10px;
@@ -128,6 +133,36 @@ const catNameJson = JSON.stringify(cat, null, 2);
 
         main :global(article), main :global(hr) {
             width: 80%;
+        }
+    }
+
+    @media (max-width: 1160px) {
+        .cont {
+            gap: 40px;
+        }
+
+        main :global(article), main :global(hr) {
+            width: 93%;
+        }
+
+        main :global(pre) {
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 910px) {
+        main :global(pre) {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 840px) {
+        main {
+            padding-inline: 50px;
+        }
+
+        main :global(article), main :global(hr) {
+            width: 100%;
         }
     }
 </style>
