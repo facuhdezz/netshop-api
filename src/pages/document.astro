@@ -165,4 +165,24 @@ const catNameJson = JSON.stringify(cat, null, 2);
             width: 100%;
         }
     }
+
+    @media (max-width: 610px) {
+        main :global(.preDiv) {
+            display: none;
+        }
+    }
+
+    @media (max-width: 450px) {
+        main :global(h1) {
+            font-size: 2.5rem;
+        }
+        
+        p {
+            font-size: 1rem;
+        }
+
+        main :global(hr) {
+            margin-bottom: 100px;
+        }
+    }
 </style>

@@ -8,8 +8,8 @@ const { title, url, json, id } = Astro.props;
     <div class="w-full my-5 p-5 border dark:border-gray-700 rounded-lg title">
         <p class="destacadosURL"><span>[GET]</span>  {url}</p>
     </div>
-    <p>Response:</p>                 
-    <div class="w-full mt-5 p-5 border dark:border-gray-700 rounded-lg title">
+    <p class="preDiv">Response:</p>                 
+    <div class="w-full mt-5 p-5 border dark:border-gray-700 rounded-lg title preDiv">
         <pre>{json}</pre>
     </div>
 </article>
